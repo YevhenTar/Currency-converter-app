@@ -14,14 +14,14 @@ export class AppComponent {
   public secondSelectedCurrency: string = "UAH";
   public firstValue: string  = "1.00";
   public secondValue: string  = "1.00";
-  public currencyList: Currency[] | undefined = [];
+  public currencyList: Currency[] = [];
 
 
   constructor(private httpService: HttpService){}
 
   ngOnInit(): void {
     this.httpService.getData().subscribe((data: any) => {
-      this.currencyList = [
+      this.currencyList =  [
         new Currency("UAH", [
             new CoefficientList("UAH", 1), 
             new CoefficientList("USD", data[0]['UAH_USD']),
@@ -53,6 +53,14 @@ export class AppComponent {
     let result: any = inputValue * coefficient;
     isNaN(result) ? result = "0.00" : result = result.toFixed(2);
     return result;
+  }
+
+  get currencyListUSD() { 
+    return (this.currencyList && this.currencyList[1]) ? (this.currencyList[1].coefficients[2].oppositeCoefficient).toFixed(2) : undefined 
+  }
+
+  get currencyListEUR() { 
+    return (this.currencyList && this.currencyList[2]) ? (this.currencyList[2].coefficients[1].oppositeCoefficient).toFixed(2) : undefined 
   }
 
 

@@ -5,11 +5,11 @@
     <div class="courses-block">
       <div class="currency-course">
         <p class="currency-name">USD/UAH:</p>
-        <p class="currency-value">{{ undefined !== currencyList ? (currencyList[1].coefficients[2].oppositeCoefficient).toFixed(2) : undefined }}</p>
+        <p class="currency-value">{{  undefined !== currencyList ? currencyListUSD : undefined }}</p>
       </div>
       <div class="currency-course">
         <p class="currency-name">EUR/UAH:</p>
-        <p class="currency-value">{{ undefined !== currencyList ? (currencyList[2].coefficients[1].oppositeCoefficient).toFixed(2) : undefined}}</p>
+        <p class="currency-value">{{ undefined !== currencyList ? currencyListEUR : undefined}}</p>
       </div>
     </div>
 </header>
