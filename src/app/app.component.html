@@ -1,0 +1,44 @@
+<header class="main-header">
+    <div class="headline-block">
+      <h1 class="main-headline">Конвертер валют</h1>
+    </div>
+    <div class="courses-block">
+      <div class="currency-course">
+        <p class="currency-name">USD/UAH:</p>
+        <p class="currency-value">{{ undefined !== currencyList ? (currencyList[1].coefficients[2].oppositeCoefficient).toFixed(2) : undefined }}</p>
+      </div>
+      <div class="currency-course">
+        <p class="currency-name">EUR/UAH:</p>
+        <p class="currency-value">{{ undefined !== currencyList ? (currencyList[2].coefficients[1].oppositeCoefficient).toFixed(2) : undefined}}</p>
+      </div>
+    </div>
+</header>
+<main class="main-content">
+  <section class="exchange-section">
+    <form #f="ngForm" class="form-block">
+      <div class="currencies-block">
+        <input type="text" class="currency-input" name="amount_one" [(ngModel)]="firstValue" (input)="secondValue = findResult(firstValue, findCoefficient(firstSelectedCurrency, secondSelectedCurrency))">
+        <select name="currency_one" class="currency-select" [(ngModel)]="firstSelectedCurrency" (change)="firstValue = findResult(secondValue, findCoefficient(secondSelectedCurrency, firstSelectedCurrency))">
+          <option *ngFor="let currency of currencyList" [value]="currency.code">{{ currency.code }}</option>
+        </select>
+      </div>
+      <img src="../assets/img/icon-two-arrows.png" alt="two-arrows" class="connection-icon">
+      <div class="currencies-block">
+        <input type="text" class="currency-input" name="amount_two" [(ngModel)]="secondValue" (input)="firstValue = findResult(secondValue, findCoefficient(secondSelectedCurrency, firstSelectedCurrency))">
+        <select name="currency_two" class="currency-select" [(ngModel)]="secondSelectedCurrency" (change)="secondValue = findResult(firstValue, findCoefficient(firstSelectedCurrency, secondSelectedCurrency))">
+          <option *ngFor="let currency of currencyList">{{ currency.code }}</option>
+        </select>
+      </div>
+    </form>
+    <!-- <a href="https://www.flaticon.com/ru/free-icons/" title="перевод иконки">Перевод иконки от Ayub Irawan - Flaticon</a> -->
+  </section>
+</main>
+  
+  
+  
+
+  
+  
+  
+
+

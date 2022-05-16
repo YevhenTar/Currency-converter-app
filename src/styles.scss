@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap');
+
+html {
+    height: 100vh;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: #DCDCDC;
+    padding: 15px;
+
+}
+@media (max-width: 575.98px) {
+    body {
+        min-height: 480px;
+    }
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+input {
+    outline: none;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-size-adjust: 16px;
+    -webkit-text-fill-color: #FFFFFF;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 174, 255, 0.04) 50%, rgba(255, 255, 255, 0) 51%, rgba(0, 174, 255, 0.03) 100%);
+}
