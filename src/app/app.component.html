@@ -22,7 +22,7 @@
           <option *ngFor="let currency of currencyList" [value]="currency.code">{{ currency.code }}</option>
         </select>
       </div>
-      <img src="../assets/img/icon-two-arrows.png" alt="two-arrows" class="connection-icon">
+      <img src="./assets/img/two-arrows.png" alt="two-arrows" class="connection-icon">
       <div class="currencies-block">
         <input type="text" class="currency-input" name="amount_two" [(ngModel)]="secondValue" (input)="firstValue = findResult(secondValue, findCoefficient(secondSelectedCurrency, firstSelectedCurrency))">
         <select name="currency_two" class="currency-select" [(ngModel)]="secondSelectedCurrency" (change)="secondValue = findResult(firstValue, findCoefficient(firstSelectedCurrency, secondSelectedCurrency))">
