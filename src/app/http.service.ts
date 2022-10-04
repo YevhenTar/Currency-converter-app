@@ -13,9 +13,9 @@ export class HttpService {
 
   getData(){
     return forkJoin([
-    this.http.get('https://free.currconv.com/api/v7/convert?q=UAH_USD,UAH_EUR&compact=ultra&apiKey=bec7ebd71de63597f9c4'),
-    this.http.get('https://free.currconv.com/api/v7/convert?q=USD_EUR,USD_UAH&compact=ultra&apiKey=bec7ebd71de63597f9c4'),
-    this.http.get('https://free.currconv.com/api/v7/convert?q=EUR_UAH,EUR_USD&compact=ultra&apiKey=bec7ebd71de63597f9c4')
+    this.http.get('https://free.currconv.com/api/v7/convert?q=UAH_USD,UAH_EUR&compact=ultra&apiKey=f07e7b2101d8b85c5bf7'),
+    this.http.get('https://free.currconv.com/api/v7/convert?q=USD_EUR,USD_UAH&compact=ultra&apiKey=f07e7b2101d8b85c5bf7'),
+    this.http.get('https://free.currconv.com/api/v7/convert?q=EUR_UAH,EUR_USD&compact=ultra&apiKey=f07e7b2101d8b85c5bf7')
     ]);
 }
 }
