@@ -9,7 +9,6 @@ import { forkJoin } from 'rxjs';
 export class HttpService {
 
   constructor(private http: HttpClient) { }
-  // 6b3ea2c0ca5183b4fd02
 
   getData(){
     return forkJoin([
